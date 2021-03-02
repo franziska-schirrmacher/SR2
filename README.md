@@ -29,3 +29,17 @@ To download the code, fork the repository or clone it using the following comman
 - tensorflow 1.14
 - h5py 2.10.0
 
+### Code structure
+
+- **checkpoints**: This folder contains the stored weights (needs to be created)
+
+- **data**: This folder contains all datasets for each of the experiments (needs to be created)
+
+- **src**: This folder contains the source code of the experiments and the proposed architectur
+
+
+
+### Datasets
+
+In order to reproduce the results, you need to download the [MNIST](http://yann.lecun.com/exdb/mnist/) and the [SVHN](http://ufldl.stanford.edu/housenumbers/) datset.
+In the **Train.py** file uncomment line #22 to store the results the first time you use the dataset

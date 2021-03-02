@@ -1,13 +1,7 @@
 ### Code structure
 
-- **checkpoints**: This folder contains the stored weights (needs to be created)
-
-- **data**: This folder contains all datasets for each of the experiments (needs to be created)
-
-- **src**: This folder contains the source code of the experiments and the proposed architectur
-
-    - **architecture**: This folder contains the model and the network components
-    - **utils**: Here are all the helper functions for training and testing
+- **architecture**: This folder contains the model and the network components
+- **utils**: Here are all the helper functions for training and testing
 
 
 ### Datasets
