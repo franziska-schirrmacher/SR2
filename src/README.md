@@ -2,6 +2,8 @@
 
 - **architecture**: This folder contains the model and the network components
 - **utils**: Here are all the helper functions for training and testing
+- **Train.py**: Script to train a model
+- **Test.py**: Script to test one or multiple models
 
 
 ### Datasets
