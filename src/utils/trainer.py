@@ -51,7 +51,7 @@ class Trainer:
             self.model.compile(optimizer=Adam(lr=self.training["lr"]),
                                loss = loss['cl'],
                                metrics = [metric['cl']])
-        if self.model.name == "sr":
+        elif self.model.name == "sr":
             self.model.compile(optimizer=Adam(lr=self.training["lr"]),
                                loss = loss['sr'],
                                metrics = [metric['sr']])
