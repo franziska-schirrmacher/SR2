@@ -97,7 +97,7 @@ class Trainer:
                            verbose=1,
                            shuffle=True,
                            callbacks=self.callbacks)
-        if self.model.name == "sr":
+        elif self.model.name == "sr":
             self.model.fit_generator(generator=generator,
                            epochs=self.training["epochs"],
                            initial_epoch=self.training["epoch_init"],
@@ -125,7 +125,7 @@ class Trainer:
                         verbose = 2,
                         shuffle=True,
                         callbacks=self.callbacks)
-        if self.model.name == "sr":
+        elif self.model.name == "sr":
             self.model.fit(x = X_lr_train, y = X_hr_train,
                         epochs=self.training["epochs"],
                         initial_epoch=self.training["epoch_init"] ,
