@@ -209,8 +209,8 @@ assert (args.num_filters > 0), "Network needs more than one filter"
 assert (args.num_res_blocks > 0), "Network needs more than one res block"
 assert (args.reg_strength > 0), "Regularization strength needs to be larger than 0"
 assert (args.batch_size > 0), "Batch size needs to be larger than 0"
-assert (args.initial_epoch < args.epochs), "Initial epoch is smaller than maximum number of epochs"
-assert (args.period < args.epochs), "Period to store the checkpoints is smaller " \
+assert (args.initial_epoch < args.epochs), "Initial epoch is higher than maximum number of epochs"
+assert (args.period < args.epochs), "Period to store the checkpoints is higher " \
                                     "than maximum number of epochs"
 assert (args.scale % 2 == 0 and args.scale <=8 and args.scale > 0), "Even number for scale"
 assert (args.noiseLow < args.noiseHigh), "Lower bound of the noise is higher than the higher bound"
