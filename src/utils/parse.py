@@ -102,29 +102,11 @@ parser.add_argument(
     default=0.0000001,
     help='lr does not go beyond min-lr')
 parser.add_argument(
-    '--weight-check',
-    help='Store the weights for 1 epoch to check if the learning rate choice is ok ',
-    action='store_true')
-parser.add_argument(
     '--pretrained-model',
     type=str,
     help='path to pre-trained model',
     default = "")
-parser.add_argument(
-    '--dropoutType',
-    type=str,
-    help='where to do dropout',
-    choices = ['all', 'common'],
-    default ="all")
-parser.add_argument(
-    '--dropout',
-    help='Decide if we apply dropout ',
-    action='store_true')
-parser.add_argument(
-    '--dropout-rate',
-    type=float,
-    default=0.5,
-    help='dropout rate for each layer')
+
 
 ## Arguments for the datasets
 parser.add_argument(
@@ -219,21 +201,16 @@ parser.add_argument(
     help='resumes training of provided model if greater than 0')
 
 
-
-# WDSR
-parser.add_argument(
-    '-o',
-    '--outdir',
-    help='output directory',
-    default='./output',
-    type=str
-    )
-
-parser.add_argument(
-    '--random-seed',
-    help='Random seed for TensorFlow',
-    default=None,
-    type=int)
-
-
 args = parser.parse_args()
+
+assert (args.split >= 0), "Splits must be a positive integer (including 0)"
+assert (args.initial_epoch >= 0 ), "Initial epoch needs to be at least 0"
+assert (args.num_filters > 0), "Network needs more than one filter"
+assert (args.num_res_blocks > 0), "Network needs more than one res block"
+assert (args.reg_strength > 0), "Regularization strength needs to be larger than 0"
+assert (args.batch_size > 0), "Batch size needs to be larger than 0"
+assert (args.initial_epoch < args.epochs), "Initial epoch is smaller than maximum number of epochs"
+assert (args.period < args.epochs), "Period to store the checkpoints is smaller " \
+                                    "than maximum number of epochs"
+assert (args.scale % 2 == 0 and args.scale <=8 and args.scale > 0), "Even number for scale"
+assert (args.noiseLow < args.noiseHigh), "Lower bound of the noise is higher than the higher bound"
