@@ -15,6 +15,10 @@ In the **Train.py** file uncomment line #22 to store the results the first time 
 
 The bash scripts to train all models described in the experiments are provided. In general, you can use the **Train.py** file to train a network. Additionally, the models can either be trained with a generator (line #40 and #65) or by loading all training images at once (line #39 and #64). The **utils/parse.py** file contains all the possible arguments you can use.
 
+### REMARK
+
+The level of noise described in the paper is not the standard deviation but the variance. The code in this repository gets the standard deviation as argument. The updated version of the paper can be found [here](https://faui1-files.cs.fau.de/public/publications/mmsec/2020-Schirrmacher-SR2.pdf)
+
 ### Pretrain super-resolution networks 
 
 ```
